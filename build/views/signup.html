@@ -1,0 +1,78 @@
+<div style="width: 60%; bottom: 0; margin-left: 20% " ng-cloak ng-controller="SignupController as ctrl">
+
+    <md-content class="md-padding" layout="row" layout-align="center center" ng-if="!ctrl.isEmailSent">
+           <div flex-xs flex-gt-xs="50" layout="column" >
+            <md-card md-theme-watch >
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline" style="text-align: center; color: crimson; font-weight: 700">LOGIN</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="row" layout-align="space-between">
+                    <div style="margin-left: 20%; width: 60%" >
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>Email ID</label>
+                                <input ng-model="ctrl.userDetails.email">
+                            </md-input-container>
+                        </div>
+
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>Name</label>
+                                <input ng-model="ctrl.userDetails.name">
+                            </md-input-container>
+                        </div>
+
+                            <div style="padding: 5%">
+                                <md-input-container layout="row">
+                                    <label>Password</label>
+                                    <input  type="password" ng-model="ctrl.userDetails.password">
+                                </md-input-container>
+
+                            </div>
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>Mobile Number</label>
+                                <input ng-model="ctrl.userDetails.mobile_no">
+                            </md-input-container>
+                        </div>
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>DOB (YYYY/MM/DD)</label>
+                                <input ng-model="ctrl.userDetails.dob">
+                            </md-input-container>
+                        </div>
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>College</label>
+                                <input ng-model="ctrl.userDetails.college">
+                            </md-input-container>
+                        </div>
+
+                        <div style="padding: 5%">
+                                <input ng-model="ctrl.userDetails.gender" value="0" type="radio" name="gender">MALE
+                                <input ng-model="ctrl.userDetails.gender" value="1" type="radio" name="gender">FEMALE
+                        </div>
+
+                         <md-input-container class="md-block">
+                            <md-switch class="md-primary" name="special" ng-model="ctrl.userDetails.auth" required>
+                                   <br><br> Enable 2FA Authentication for this acount ? 
+                            </md-switch>
+                        </md-input-container>
+                            
+                    </div>
+
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                   <md-button ng-click="ctrl.signup()" >CONTINUE <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_forward</md-icon></md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>

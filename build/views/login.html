@@ -1,0 +1,38 @@
+<div style="width: 60%; bottom: 0; margin-left: 20% " ng-cloak ng-controller="LoginController as ctrl">
+
+    <md-content class="md-padding" layout="row" layout-align="center center" >
+           <div flex-xs flex-gt-xs="50" layout="column" >
+            <md-card md-theme-watch >
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline" style="text-align: center; color: crimson; font-weight: 700">LOGIN</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="row" layout-align="space-between">
+                    <div style="margin-left: 20%; width: 60%" >
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>Email ID</label>
+                                <input ng-model="ctrl.userDetails.username">
+                            </md-input-container>
+                        </div>
+
+                            <div style="padding: 5%">
+                                <md-input-container layout="row">
+                                    <label>Password</label>
+                                    <input  type="password" ng-model="ctrl.userDetails.password">
+                                </md-input-container>
+
+                            </div>
+                            <h5> Not a user ? <span ng-click="ctrl.goTo('signup')" > Sign UP here </span> </h5>
+                    </div>
+
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                   <md-button ng-click="ctrl.login()" >CONTINUE <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_forward</md-icon></md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>

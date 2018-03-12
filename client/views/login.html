@@ -1,6 +1,6 @@
 <div style="width: 60%; bottom: 0; margin-left: 20% " ng-cloak ng-controller="LoginController as ctrl">
 
-    <md-content class="md-padding" layout="row" layout-align="center center" >
+    <md-content class="md-padding" layout="row" layout-align="center center" ng-if="!ctrl.forgot_password">
            <div flex-xs flex-gt-xs="50" layout="column" >
             <md-card md-theme-watch >
                 <md-card-title>
@@ -26,6 +26,8 @@
 
                             </div>
                             <h5> Not a user ? <span ng-click="ctrl.goTo('signup')" > Sign UP here </span> </h5>
+                            <br>
+                            <h6 ng-click="ctrl.forgot_password = true"> Forgot password ? </h7>
                     </div>
 
                 </md-card-content>
@@ -33,6 +35,32 @@
                    <md-button ng-click="ctrl.login()" >CONTINUE <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_forward</md-icon></md-button>
                 </md-card-actions>
             </md-card>
+
         </div>
+    </md-content>
+
+    <md-content ng-if="ctrl.forgot_password">
+
+        <div flex-xs layout="column" >
+                
+                    <div style="margin-left: 20%; width: 60%" >
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>Email ID</label>
+                                <input ng-model="ctrl.email">
+                            </md-input-container>
+                        </div>
+                    </div>
+
+
+                   <md-button ng-click="ctrl.forgot_password = false" >CANCEL <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_backward</md-icon></md-button> 
+                
+                   <md-button ng-click="ctrl.send_email()" >CONTINUE <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_forward</md-icon></md-button>
+                
+            
+        </div>
+
+
     </md-content>
 </div>

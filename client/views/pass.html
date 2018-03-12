@@ -1,0 +1,27 @@
+<div ng-controller="SignupController as ctrl" style="margin-top: 10%; margin-left: 40%">
+    <div  ng-cloak layout-gt-sm="row" layout="column">
+
+  <div flex-gt-sm="50" flex>
+
+    <md-content>
+          <div flex-xs layout="column" >
+                
+                    <div style="margin-left: 20%; width: 60%" >
+
+                        <div style="padding: 5%">
+                            <md-input-container layout="row">
+                                <label>New Password</label>
+                                <input ng-model="ctrl.newPassword">
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                
+                   <md-button ng-click="ctrl.change_password()" >CONTINUE <md-icon style="color: crimson; width: 40px ;text-align: center" class="material-icons"> arrow_forward</md-icon></md-button>
+                
+            
+        </div>
+    </md-content>
+</div>
+</div>
+</div>

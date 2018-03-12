@@ -10,7 +10,7 @@
     function LoginController($state, MainService, $mdToast, ToasterService, $cookieStore) {
         var ctrl = this;
         ctrl.userDetails = {};
-        ctrl.userDetails['auth'] = "0";
+        ctrl.forgot_password = false;
 
         ctrl.login = function() {
             MainService.login(ctrl.userDetails).then(function(response){
@@ -33,6 +33,17 @@
             }, function(err) {
                 ToasterService.show(err.data.message)
             })
+        }
+
+        ctrl.send_email = function() {
+              var postData = {
+                'email' : ctrl.email
+              }
+              MainService.sendEmail(postData).then(function(reponse) {
+                   ToasterService.show('Link sent to email') 
+              },function(err) {
+                ToasterService.show(err.data.message)
+            })  
         }
 
         ctrl.goTo = function(state) {

@@ -71,7 +71,32 @@
                 }
             }
 
+        },
+        {
+            name: 'forgot_password',
+            state: {
+
+                url: '/password?token',
+                controller: 'PasswordController',
+                data: {
+                    text : 'Verify',
+                    visible: false
+                }
+            }            
+        },
+        {
+            name: 'change_password',
+            state: {
+
+                url: '/change-password',
+                templateUrl: '../views/pass.html',
+                data: {
+                    text : 'Verify',
+                    visible: false
+                }
+            }            
         }
+
     ];
 
   

@@ -16,10 +16,25 @@
         service.signout = signout;
         service.signup = signup;
         service.verifyEmail = verifyEmail;
+        service.changePassword  = changePassword;
+        service.sendEmail = sendEmail;
+        service.verifyPasswordToken = verifyPasswordToken;
         return service;
 
         function signout(postData) {
             return $http.post(BASE_URL + 'signout',postData);
+        }
+
+        function changePassword(postData) {
+            return $http.post(BASE_URL + 'change-pass',postData);   
+        }
+
+        function verifyPasswordToken(token) {
+            return $http.get(BASE_URL + 'pass-token?token='+token);
+        }
+
+        function sendEmail(postData) {
+            return $http.post(BASE_URL + 'pass-token',postData);      
         }
 
         function verifyEmail(link) {
@@ -41,7 +56,7 @@
         function emailAuth(postData) {
             return $http.post(BASE_URL + 'send-otp',postData);   
         }
-
+        
     }
 
 })();
